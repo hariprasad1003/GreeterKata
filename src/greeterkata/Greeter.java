@@ -5,12 +5,18 @@ public class Greeter {
 	
 	// Function to trim the name
 	public static String getTrimmedName(String name) {
+		if (name == null || name.isEmpty()) {
+			return "";
+		}
 		String trimmedName = name.trim();
 		return trimmedName;
 	}
 
 	// Function to capitalize the first letter of the name
 	public static String getFirstLetterCapitablizedName(String name) {
+		if (name == null || name.isEmpty()) {
+			return "";
+		}
 		String firstLetterCapitalized = name.substring(0, 1).toUpperCase();;
 		String firstLetterCapitalizedName = firstLetterCapitalized + name.substring(1);
 		return firstLetterCapitalizedName;
@@ -41,8 +47,11 @@ public class Greeter {
 	
 	// The main function which return the greeting output
 	public static String greet(String name) {
-		String trimmedName = getTrimmedName(name);
 		String greeting = getGreetingBasedOnTime();
+		String trimmedName = getTrimmedName(name);
+		if (trimmedName == null || trimmedName.isEmpty()) {
+			return greeting + " " + GreeterConstants.USER;
+		}
 		greeting = greeting + " " + getFirstLetterCapitablizedName(trimmedName);
 		
 		// Logs each time when the function called

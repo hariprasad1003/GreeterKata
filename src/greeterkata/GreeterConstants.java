@@ -6,4 +6,5 @@ public class GreeterConstants {
 	public static final String GREETING_GOOD_MORNING = "Good morning";
 	public static final String GREETING_GOOD_EVENING = "Good evening";
 	public static final String GREETING_GOOD_NIGHT = "Good night";
+	public static final String USER = "User";
 }
