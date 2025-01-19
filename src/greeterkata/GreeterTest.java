@@ -79,11 +79,11 @@ public class GreeterTest {
 	public void greetGoodMorningTest() {
 		// System.out.println("greetGoodMorningTest: \n");
 		String name = "Jothi";
-			String greeting = greeter.greet(name);
-			String trimmedName = greeter.getTrimmedName(name);
-			String expectedGreeting = GreeterConstants.GREETING_GOOD_MORNING + " " + greeter.getFirstLetterCapitablizedName(trimmedName);
-			// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
-			assertEquals(expectedGreeting, greeting);
+		String greeting = greeter.greet(name);
+		String trimmedName = greeter.getTrimmedName(name);
+		String expectedGreeting = GreeterConstants.GREETING_GOOD_MORNING + " " + greeter.getFirstLetterCapitablizedName(trimmedName);
+		// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
+		assertEquals(expectedGreeting, greeting);
 	}
 	
 	
