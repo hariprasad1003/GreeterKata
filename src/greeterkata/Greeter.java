@@ -19,6 +19,8 @@ public class Greeter {
 		LocalTime currentTime = LocalTime.now();
 		if (currentTime.isAfter(LocalTime.of(6, 0)) && currentTime.isBefore(LocalTime.of(12, 0))) {
 			greetingBasedOnTime = GreeterConstants.GREETING_GOOD_MORNING;
+        } else if (currentTime.isAfter(LocalTime.of(18, 0)) && currentTime.isBefore(LocalTime.of(22, 0))) {
+        	greetingBasedOnTime = GreeterConstants.GREETING_GOOD_EVENING;
         } else {
         	greetingBasedOnTime = GreeterConstants.GREETING_HELLO;
         }
