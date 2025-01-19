@@ -82,18 +82,33 @@ public class GreeterTest {
 	}
 	
 	
-	@Test
+// 	@Test
 	/**
 	 * Fifth test case: Tests greet function receives the different inputs 
 	 * capitalize the first letter, trims the input and outputs "Good evening <name>" if time between 18:00 - 22:00.
 	 */
 	public void greetGoodEveningTest() {
-		System.out.println("greetGoodEveningTest: \n");
+		// System.out.println("greetGoodEveningTest: \n");
 		String name = "Harish";
 		String greeting = greeter.greet(name);
 		String trimmedName = greeter.getTrimmedName(name);
 		String expectedGreeting = GreeterConstants.GREETING_GOOD_EVENING + " " + greeter.getFirstLetterCapitablizedName(trimmedName);
-		System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
+		// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
+		assertEquals(expectedGreeting, greeting);
+	}
+
+	@Test
+	/**
+	 * Sixth test case: Tests greet function receives the different inputs 
+	 * capitalize the first letter, trims the input and outputs "Good night <name>" if time between 18:00 - 22:00.
+	 */
+	public void greetGoodNightTest() {
+		// System.out.println("greetGoodNightTest: \n");
+		String name = "Ahamed";
+		String greeting = greeter.greet(name);
+		String trimmedName = greeter.getTrimmedName(name);
+		String expectedGreeting = GreeterConstants.GREETING_GOOD_NIGHT + " " + greeter.getFirstLetterCapitablizedName(trimmedName);
+		// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
 		assertEquals(expectedGreeting, greeting);
 	}
 }

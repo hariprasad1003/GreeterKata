@@ -17,20 +17,23 @@ public class Greeter {
 	public static String getGreetingBasedOnTime() {
 		String greetingBasedOnTime;
 		LocalTime currentTime = LocalTime.now();
+		
 		if (currentTime.isAfter(LocalTime.of(6, 0)) && currentTime.isBefore(LocalTime.of(12, 0))) {
 			greetingBasedOnTime = GreeterConstants.GREETING_GOOD_MORNING;
         } else if (currentTime.isAfter(LocalTime.of(18, 0)) && currentTime.isBefore(LocalTime.of(22, 0))) {
         	greetingBasedOnTime = GreeterConstants.GREETING_GOOD_EVENING;
+        } else if (currentTime.isAfter(LocalTime.of(22, 0)) || currentTime.isBefore(LocalTime.of(6, 0))) {
+        	greetingBasedOnTime = GreeterConstants.GREETING_GOOD_NIGHT;
         } else {
         	greetingBasedOnTime = GreeterConstants.GREETING_HELLO;
         }
+		
 		return greetingBasedOnTime;
 	}
 	
 	public static String greet(String name) {
 		String greeting;
 		String trimmedName = getTrimmedName(name);
-        
 		return getGreetingBasedOnTime() + " " + getFirstLetterCapitablizedName(trimmedName);
 	}
 }
