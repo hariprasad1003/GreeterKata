@@ -43,7 +43,24 @@ public class GreeterTest {
 		String[] names = {" Hari    ", "    Divya", "  Gokul  ", "   Komala "};
 		for (String name : names) {
 			String greeting = greeter.greet(name);
-			String expectedGreeting = GreeterConstants.GREETING_HELLO + " " + name.trim();
+			String expectedGreeting = GreeterConstants.GREETING_HELLO + " " + greeter.getTrimmedName(name);
+			// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
+			assertEquals(expectedGreeting, greeting);
+		}
+	}
+	
+	@Test
+	/**
+	 * Test function for first test case: Tests greet function receives the different inputs 
+	 * capitalize the first letter, trims the input and outputs "Hello <name>".
+	 */
+	public void greetCapitializeInputTest() {
+		// System.out.println("greetCapitializeInputTest: \n");
+		String[] names = {"haRi", "dIVYA", "Gokul", "komala"};
+		for (String name : names) {
+			String greeting = greeter.greet(name);
+			String trimmedName = greeter.getTrimmedName(name);
+			String expectedGreeting = GreeterConstants.GREETING_HELLO + " " + greeter.getFirstLetterCapitablizedName(trimmedName);
 			// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
 			assertEquals(expectedGreeting, greeting);
 		}
