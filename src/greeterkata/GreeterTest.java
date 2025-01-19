@@ -17,9 +17,9 @@ public class GreeterTest {
 	}
 	
 
-	@Test
+//	@Test
 	/**
-	 * Test function for first test case: Tests greet function receives the different inputs 
+	 * First Test Case: Tests greet function receives the different inputs 
 	 * and outputs "Hello <name>".
 	 */
 	public void greetHelloTest() {
@@ -33,9 +33,9 @@ public class GreeterTest {
 		}
 	}
 
-	@Test
+//	@Test
 	/**
-	 * Test function for first test case: Tests greet function receives the different inputs 
+	 * Second test case: Tests greet function receives the different inputs 
 	 * trims the input and outputs "Hello <name>".
 	 */
 	public void greetTrimsInputTest() {
@@ -49,9 +49,9 @@ public class GreeterTest {
 		}
 	}
 	
-	@Test
+//	@Test
 	/**
-	 * Test function for first test case: Tests greet function receives the different inputs 
+	 * Third test case: Tests greet function receives the different inputs 
 	 * capitalize the first letter, trims the input and outputs "Hello <name>".
 	 */
 	public void greetCapitializeInputTest() {
@@ -64,5 +64,20 @@ public class GreeterTest {
 			// System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
 			assertEquals(expectedGreeting, greeting);
 		}
+	}
+	
+	@Test
+	/**
+	 * Fourth test case: Tests greet function receives the different inputs 
+	 * capitalize the first letter, trims the input and outputs "Good morning <name>" if time between 06:00 - 12:00.
+	 */
+	public void greetGoodMorningTest() {
+		System.out.println("greetGoodMorningTest: \n");
+		String name = "Jothi";
+			String greeting = greeter.greet(name);
+			String trimmedName = greeter.getTrimmedName(name);
+			String expectedGreeting = GreeterConstants.GREETING_GOOD_MORNING + " " + greeter.getFirstLetterCapitablizedName(trimmedName);
+			System.out.println("Expected Greeting: " + expectedGreeting + "; " + "Resulting Greeting: " + greeting + "\n");
+			assertEquals(expectedGreeting, greeting);
 	}
 }

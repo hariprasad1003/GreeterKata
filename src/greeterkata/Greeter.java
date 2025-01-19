@@ -1,6 +1,12 @@
 package greeterkata;
+import java.time.LocalTime;
 
 public class Greeter {
+	
+	public static String getTrimmedName(String name) {
+		String trimmedName = name.trim();
+		return trimmedName;
+	}
 	
 	public static String getFirstLetterCapitablizedName(String name) {
 		String firstLetterCapitalized = name.substring(0, 1).toUpperCase();;
@@ -8,15 +14,21 @@ public class Greeter {
 		return firstLetterCapitalizedName;
 	}
 	
-	public static String getTrimmedName(String name) {
-		String trimmedName = name.trim();
-		return trimmedName;
+	public static String getGreetingBasedOnTime() {
+		String greetingBasedOnTime;
+		LocalTime currentTime = LocalTime.now();
+		if (currentTime.isAfter(LocalTime.of(6, 0)) && currentTime.isBefore(LocalTime.of(12, 0))) {
+			greetingBasedOnTime = GreeterConstants.GREETING_GOOD_MORNING;
+        } else {
+        	greetingBasedOnTime = GreeterConstants.GREETING_HELLO;
+        }
+		return greetingBasedOnTime;
 	}
 	
 	public static String greet(String name) {
 		String greeting;
-		String trimmedName = getTrimmedName(name);		
-		greeting =  GreeterConstants.GREETING_HELLO + " " + getFirstLetterCapitablizedName(trimmedName);
-		return greeting;
+		String trimmedName = getTrimmedName(name);
+        
+		return getGreetingBasedOnTime() + " " + getFirstLetterCapitablizedName(trimmedName);
 	}
 }
