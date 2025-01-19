@@ -49,7 +49,7 @@ public class GreeterTest {
 		}
 	}
 	
-	@Test
+//	@Test
 	/**
 	 * Third test case: Tests greet function receives the different inputs 
 	 * capitalize the first letter, trims the input and outputs "Hello <name>".

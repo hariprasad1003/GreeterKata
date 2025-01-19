@@ -1,4 +1,5 @@
 package greeterkata;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Greeter {
@@ -50,12 +51,13 @@ public class Greeter {
 		String greeting = getGreetingBasedOnTime();
 		String trimmedName = getTrimmedName(name);
 		if (trimmedName == null || trimmedName.isEmpty()) {
-			return greeting + " " + GreeterConstants.USER;
-		}
-		greeting = greeting + " " + getFirstLetterCapitablizedName(trimmedName);
+			greeting = greeting + " " + GreeterConstants.USER;
+		}else {
+			greeting = greeting + " " + getFirstLetterCapitablizedName(trimmedName);
+		}		
 		
 		// Logs each time when the function called
-		System.out.println("greet function called at " + LocalTime.now() + ". Input: " + name + ", Output: " + greeting);
+		System.out.println("greet method called on " + LocalDate.now() + " at " + LocalTime.now() + ". Input: " + name + ", Output: " + greeting);
 		
 		return greeting;
 	}
